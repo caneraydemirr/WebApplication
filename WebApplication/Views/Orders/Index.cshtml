@@ -1,0 +1,54 @@
+﻿@model List<Orders>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>MVC Orders Table</h3>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>CustomerID</th>
+        <th>EmployeeID</th>
+        <th>OrderDate</th>
+        <th>RequiredDate</th>
+        <th>ShippedDate</th>
+        <th>ShipVia</th>
+        <th>Freight</th>
+        <th>ShipName</th>
+        <th>ShipAddress</th>
+        <th>ShipCity</th>
+        <th>ShipRegion</th>
+        <th>ShipPostalCode</th>
+        <th>ShipCountry</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.OrderID</th>
+            <td>@item.CustomerID</td>
+            <td>@item.EmployeeID</td>
+            <th>@item.OrderDate</th>
+            <td>@item.RequiredDate</td>
+            <td>@item.ShippedDate</td>
+            <th>@item.ShipVia</th>
+            <td>@item.Freight</td>
+            <td>@item.ShipName</td>
+            <th>@item.ShipAddress</th>
+            <td>@item.ShipCity</td>
+            <td>@item.ShipRegion</td>
+            <th>@item.ShipPostalCode</th>
+            <td>@item.ShipCountry</td>
+            <td><a href="/Orders/DeleteOrder/@item.OrderID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Orders/EditOrder/@item.OrderID" class="btn btn-warning">Update</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Orders/AddOrder" class="btn btn-primary">New Order</a>
+

@@ -1,0 +1,59 @@
+﻿@model List<Employees>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>MVC Employees Table</h3>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>LastName</th>
+        <th>FirstName</th>
+        <th>Title</th>
+        <th>TitleOfCourtesy</th>
+        <th>BirthDate</th>
+        <th>HireDate</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+        <th>HomePhone</th>
+        <th>Extension</th>
+        <th>Notes</th>
+        <th>ReportsTo</th>
+        <th>PhotoPath</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <th>@item.EmployeeID</th>
+        <td>@item.LastName</td>
+        <td>@item.FirstName</td>
+        <th>@item.Title</th>
+        <td>@item.TitleOfCourtesy</td>
+        <td>@item.BirthDate</td>
+        <th>@item.HireDate</th>
+        <td>@item.Address</td>
+        <td>@item.City</td>
+        <th>@item.Region</th>
+        <td>@item.PostalCode</td>
+        <td>@item.Country</td>
+        <th>@item.HomePhone</th>
+        <td>@item.Extension</td>
+        <td>@item.Notes</td>
+        <th>@item.ReportsTo</th>
+        <td>@item.PhotoPath</td>
+        <td><a href="/Employees/DeleteEmployee/@item.EmployeeID" class="btn btn-danger">Delete</a></td>
+        <td><a href="/Employees/EditEmployee/@item.EmployeeID" class="btn btn-warning">Update</a></td>
+    </tr>
+    }
+</table>
+
+<a href="/Employees/AddEmployee" class="btn btn-primary">New Shipper</a>

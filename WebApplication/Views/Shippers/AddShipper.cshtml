@@ -1,0 +1,24 @@
+﻿@model Shippers
+@{
+    ViewBag.Title = "AddShipper";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>New Shipper Add</h1>
+<br />
+
+@using (Html.BeginForm("AddShipper", "Shippers", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("CompanyName")
+        @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CompanyName)
+        <br />
+        <br />
+        @Html.Label("Phone")
+        @Html.TextAreaFor(x => x.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Phone)
+        <br />
+        <button class="btn btn-info">Insert</button>
+    </div>
+}

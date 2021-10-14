@@ -1,0 +1,31 @@
+﻿@model List<Shippers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>MVC Shippers Table</h3>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>CompanyName</th>
+        <th>Phone</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.ShipperID</th>
+            <td>@item.CompanyName</td>
+            <td>@item.Phone</td>
+            <td><a href="/Shippers/DeleteShipper/@item.ShipperID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Shippers/EditShipper/@item.ShipperID" class="btn btn-warning">Update</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Shippers/AddShipper" class="btn btn-primary">New Shipper</a>

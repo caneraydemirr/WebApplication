@@ -1,0 +1,95 @@
+﻿@model Employees
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>New Employees Add</h1>
+<br />
+
+@using (Html.BeginForm("AddEmployee", "Employees", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("EmployeeID")
+        @Html.TextBoxFor(x => x.EmployeeID, new { @Value = "0", @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.EmployeeID)
+        <br />
+        <br />
+        @Html.Label("LastName")
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.LastName)
+        <br />
+        @Html.Label("FirstName")
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.FirstName)
+        <br />
+        <br />
+        @Html.Label("Title")
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Title)
+        <br />
+        <br />
+        @Html.Label("TitleOfCourtesy")
+        @Html.TextBoxFor(x => x.TitleOfCourtesy, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TitleOfCourtesy)
+        <br />
+        <br />
+        @Html.Label("BirthDate")
+        @Html.TextBoxFor(x => x.BirthDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BirthDate)
+        <br />
+        @Html.Label("HireDate")
+        @Html.TextBoxFor(x => x.HireDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HireDate)
+        <br />
+        <br />
+        @Html.Label("Address")
+        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Address)
+        <br />
+        @Html.Label("City")
+        @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.City)
+        <br />
+        <br />
+        @Html.Label("Region")
+        @Html.TextBoxFor(x => x.Region, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Region)
+        <br />
+        <br />
+        @Html.Label("PostalCode")
+        @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PostalCode)
+        <br />
+        <br />
+        @Html.Label("Country")
+        @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Country)
+        <br />
+        @Html.Label("HomePhone")
+        @Html.TextBoxFor(x => x.HomePhone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HomePhone)
+        <br />
+        <br />
+        @Html.Label("Extension")
+        @Html.TextBoxFor(x => x.Extension, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Extension)
+        <br />
+        @Html.Label("Notes")
+        @Html.TextBoxFor(x => x.Notes, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Notes)
+        <br />
+        <br />
+        @Html.Label("ReportsTo")
+        @Html.TextBoxFor(x => x.ReportsTo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ReportsTo)
+        <br />
+        <br />
+        @Html.Label("PhotoPath")
+        @Html.TextBoxFor(x => x.PhotoPath, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PhotoPath)
+        <br />
+        <br />
+        <button class="btn btn-info">Insert</button>
+    </div>
+}

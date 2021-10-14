@@ -1,0 +1,67 @@
+﻿@model Customers
+@{
+    ViewBag.Title = "EditCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>Customers Update Page</h2>
+<br />
+
+@using (Html.BeginForm("EditCustomer", "Customers", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("CustomerID")
+    @Html.TextBoxFor(x => x.CustomerID, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CustomerID)
+    <br />
+    <br />
+    @Html.Label("CompanyName")
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CompanyName)
+    <br />
+    @Html.Label("ContactName")
+    @Html.TextBoxFor(x => x.ContactName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ContactName)
+    <br />
+    <br />
+    @Html.Label("ContactTitle")
+    @Html.TextBoxFor(x => x.ContactTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ContactTitle)
+    <br />
+    <br />
+    @Html.Label("Address")
+    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Address)
+    <br />
+    <br />
+    @Html.Label("City")
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.City)
+    <br />
+    <br />
+    @Html.Label("Region")
+    @Html.TextBoxFor(x => x.Region, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Region)
+    <br />
+    @Html.Label("PostalCode")
+    @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PostalCode)
+    <br />
+    <br />
+    @Html.Label("Country")
+    @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Country)
+    <br />
+    @Html.Label("Phone")
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Phone)
+    <br />
+    <br />
+    @Html.Label("Fax")
+    @Html.TextBoxFor(x => x.Fax, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Fax)
+    <br /><br />
+    <button class="btn btn-success">Update</button>
+</div>
+}

@@ -1,0 +1,83 @@
+﻿@model Orders
+@{
+    ViewBag.Title = "AddOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>New Orders Add</h1>
+<br />
+
+@using (Html.BeginForm("AddOrder", "Orders", FormMethod.Post))
+{
+    
+<div class="form-group">
+    @Html.Label("OrderID")
+    @Html.TextBoxFor(x => x.OrderID, new { @Value = "0", @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OrderID)
+    <br />
+    <br />
+    @Html.Label("CustomerID")
+    @Html.TextBoxFor(x => x.CustomerID, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CustomerID)
+    <br />
+    @Html.Label("EmployeeID")
+    @Html.TextBoxFor(x => x.EmployeeID, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.EmployeeID)
+    <br />
+    <br />
+    @Html.Label("OrderDate")
+    @Html.TextBoxFor(x => x.OrderDate, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OrderDate)
+    <br />
+    <br />
+    @Html.Label("RequiredDate")
+    @Html.TextBoxFor(x => x.RequiredDate, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.RequiredDate)
+    <br />
+    <br />
+    @Html.Label("ShippedDate")
+    @Html.TextBoxFor(x => x.ShippedDate, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShippedDate)
+    <br />
+    @Html.Label("ShipVia")
+    @Html.TextBoxFor(x => x.ShipVia, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShipVia)
+    <br />
+    <br />
+    @Html.Label("Freight")
+    @Html.TextBoxFor(x => x.Freight, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Freight)
+    <br />
+    @Html.Label("ShipName")
+    @Html.TextBoxFor(x => x.ShipName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShipName)
+    <br />
+    <br />
+    @Html.Label("ShipAddress")
+    @Html.TextBoxFor(x => x.ShipAddress, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShipAddress)
+    <br />
+    <br />
+    @Html.Label("ShipCity")
+    @Html.TextBoxFor(x => x.ShipCity, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShipCity)
+    <br />
+    <br />
+    @Html.Label("ShipRegion")
+    @Html.TextBoxFor(x => x.ShipRegion, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShipRegion)
+    <br />
+    @Html.Label("ShipPostalCode")
+    @Html.TextBoxFor(x => x.ShipPostalCode, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShipPostalCode)
+    <br />
+    <br />
+    @Html.Label("ShipCountry")
+    @Html.TextBoxFor(x => x.ShipCountry, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ShipCountry)
+    <br />
+    <br />
+    <button class="btn btn-info">Insert</button>
+</div>
+}
+

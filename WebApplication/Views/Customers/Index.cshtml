@@ -1,0 +1,48 @@
+﻿@model List<Customers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>MVC Customers Table</h3>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>CompanyName</th>
+        <th>ContactName</th>
+        <th>ContactTitle</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>PostalCode</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th>Fax</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <th>@item.CustomerID</th>
+    <td>@item.CompanyName</td>
+    <td>@item.ContactName</td>
+    <th>@item.ContactTitle</th>
+    <td>@item.Address</td>
+    <th>@item.City</th>
+    <td>@item.Region</td>
+    <td>@item.PostalCode</td>
+    <th>@item.Country</th>
+    <td>@item.Phone</td>
+    <td>@item.Fax</td>
+    <td><a href="/Customers/DeleteCustomer/@item.CustomerID" class="btn btn-danger">Delete</a></td>
+    <td><a href="/Customers/EditCustomer/@item.CustomerID" class="btn btn-warning">Update</a></td>
+</tr>
+    }
+</table>
+
+<a href="/Customers/AddCustomer" class="btn btn-primary">New Customer</a>
+
